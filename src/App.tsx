@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet'; // Add this import (install with npm if needed)
+import { Analytics } from '@vercel/analytics/react'; // Add this import
+import { SpeedInsights } from '@vercel/speed-insights/react'; // Add this import
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Aboutus from './components/Aboutus';
@@ -92,6 +94,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
+      <Analytics />
+      <SpeedInsights />
     </Router>
   );
 }
