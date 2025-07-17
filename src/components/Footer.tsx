@@ -24,7 +24,7 @@ const Footer = () => {
               <p>
                 <span className="font-medium">Phone:</span>{' '}
                 <a 
-                  href="tel:9003873082" 
+                  href="tel:9487458589" 
                   className="hover:text-purple-400 transition-colors"
                 >
                   9487458589
