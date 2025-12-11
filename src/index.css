@@ -935,13 +935,30 @@ body {
   button, a, [onClick] {
     position: relative;
     z-index: 10;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
   
   /* Fix for service cards */
   .cursor-pointer {
     pointer-events: auto !important;
     -webkit-tap-highlight-color: rgba(168, 85, 247, 0.3);
+  }
+  
+  /* Hero section elements */
+  .animated-letter {
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: rgba(168, 85, 247, 0.2);
+  }
+  
+  /* Ensure hero section is clickable */
+  .bg-\\[\\#130026\\] {
+    pointer-events: auto !important;
+  }
+  
+  /* Fix for all interactive elements */
+  button, a, [role="button"], .cursor-pointer {
+    -webkit-tap-highlight-color: rgba(168, 85, 247, 0.3);
+    touch-action: manipulation;
   }
 }
 
