@@ -20,7 +20,7 @@ function Navbar() {
   const handleLinkClick = (link) => {
     setIsMenuOpen(false);
     if (link.name === 'CAREERS') {
-      window.open('https://bes-kappa.vercel.app/', '_blank');
+      window.open('https://bes-j2gn.vercel.app/', '_blank');
     } else {
       // Use lowercase paths for consistency
       const path = link.path.toLowerCase();
@@ -56,7 +56,7 @@ function Navbar() {
         {navLinks.map((link) => (
           <a
             key={link.name}
-            href={link.name === 'CAREERS' ? 'https://bes-kappa.vercel.app/' : link.path.toLowerCase()}
+            href={link.name === 'CAREERS' ? 'https://bes-j2gn.vercel.app/' : link.path.toLowerCase()}
             target={link.name === 'CAREERS' ? '_blank' : undefined}
             rel={link.name === 'CAREERS' ? 'noopener noreferrer' : undefined}
             className="text-sm font-medium tracking-wide hover:text-purple-400 transition-colors font-rajdhani px-2 py-1 min-h-[44px] flex items-center"

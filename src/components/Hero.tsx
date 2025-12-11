@@ -71,7 +71,7 @@ const handleInputChange = (e) => {
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      window.open('https://bes-kappa.vercel.app/', '_blank');
+                      window.open('https://bes-j2gn.vercel.app/', '_blank');
                     }}
                     onTouchStart={(e) => {
                       e.stopPropagation();

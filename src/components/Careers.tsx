@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 function Careeres() {
   useEffect(() => {
     // Redirect to external careers page
-    window.location.href = 'https://bes-kappa.vercel.app/';
+    window.location.href = 'https://bes-j2gn.vercel.app/';
   }, []);
 
   return (
