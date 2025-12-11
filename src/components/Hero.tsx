@@ -54,11 +54,11 @@ const handleInputChange = (e) => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#130026] text-white">
+    <div className="min-h-screen bg-[#130026] text-white relative z-0">
       
       {/* Important Alert Banner for Internships */}
       {showAlert && (
-        <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-pulse border-b-2 border-purple-400 shadow-lg">
+        <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-pulse border-b-2 border-purple-400 shadow-lg z-20">
           <div className="container mx-auto px-3 md:px-4 py-3 md:py-4">
             <div className="flex items-start md:items-center justify-between gap-2 md:gap-4">
               <div className="flex items-start gap-2 md:gap-3 flex-1 min-w-0">
@@ -121,8 +121,17 @@ const handleInputChange = (e) => {
       At Synnoviq Technologies, we offer a comprehensive suite of services designed to meet the              
       evolving needs of businesses and entertainment industries.           
     </p>           
-    <button className="px-6 md:px-10 py-3 md:py-4 text-base md:text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button active:scale-95 transition-transform min-h-[48px] touch-manipulation" 
-      onClick={() => window.location.href = '/contactus'} >   
+    <button 
+      className="px-6 md:px-10 py-3 md:py-4 text-base md:text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button active:scale-95 transition-transform min-h-[48px] touch-manipulation relative z-10" 
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = '/contactus';
+      }}
+      onTouchStart={(e) => {
+        e.stopPropagation();
+      }}
+    >   
       Connect 
     </button>         
   </div>                    
@@ -137,7 +146,7 @@ const handleInputChange = (e) => {
 
 {/* Talent Pool Section - Fixed Layout with Connect Button on Right */}
 <div 
-  className="py-16 px-8 bg-[#130026] overflow-hidden"
+  className="py-8 md:py-16 px-4 md:px-8 bg-[#130026] overflow-hidden"
   style={{
     position: 'relative'
   }}
@@ -154,7 +163,7 @@ const handleInputChange = (e) => {
       >
         {/* Fixed title with proper visibility */}
         <h1 
-          className="text-5xl font-bold bg-gradient-to-r from-[#60A5FA] via-[#F472B6] to-[#FCA5A5] bg-clip-text text-transparent"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#60A5FA] via-[#F472B6] to-[#FCA5A5] bg-clip-text text-transparent"
           style={{
             backgroundSize: '200% 200%',
             animation: 'gradientShift 8s ease infinite, titleAppear 1s ease-out forwards',
@@ -163,7 +172,7 @@ const handleInputChange = (e) => {
           OUR TALENT POOL
         </h1>
         <p 
-          className="text-xl leading-relaxed font-light relative overflow-hidden"
+          className="text-base md:text-lg lg:text-xl leading-relaxed font-light relative overflow-hidden"
           style={{
             position: 'relative',
           }}
@@ -188,14 +197,14 @@ const handleInputChange = (e) => {
           ></span>
         </p>
         <div 
-          className="flex items-center space-x-4 relative"
+          className="flex flex-col md:flex-row items-start md:items-center gap-4 md:space-x-4 relative"
           style={{
             opacity: 0,
             animation: 'fadeSlideIn 0.8s ease-out 1.5s forwards',
           }}
         >
           <h2 
-            className="text-2xl font-semibold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent relative"
+            className="text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent relative"
             style={{
               backgroundSize: '200% 200%',
               animation: 'gradientPulse 4s ease infinite',
@@ -211,11 +220,18 @@ const handleInputChange = (e) => {
           </h2>
           {/* Connect Button placed to the right of "get started" text */}
           <button 
-  className="px-10 py-4 text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button"
-  onClick={() => window.location.href = '/contactus'}
->
-  Connect
-</button>
+            className="px-6 md:px-10 py-3 md:py-4 text-base md:text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button touch-manipulation min-h-[48px] relative z-10 mt-4 md:mt-0"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.location.href = '/contactus';
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            Connect
+          </button>
         </div>
       </div>
                 

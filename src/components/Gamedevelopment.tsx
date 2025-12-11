@@ -44,10 +44,10 @@ function GameServices() {
   ];
 
   return (
-    <div className="bg-[#130026] py-20 px-16 overflow-hidden min-h-screen">
+    <div className="bg-[#130026] py-8 md:py-20 px-4 md:px-16 overflow-hidden min-h-screen relative z-10">
       <div className="container mx-auto max-w-7xl">
         {/* Main Heading with Animation */}
-        <h2 className="text-6xl font-bold mb-20 text-left">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-20 text-left">
           <span className="bg-gradient-to-r from-[#60A5FA] via-[#F472B6] to-[#FCA5A5] bg-clip-text text-transparent">
             GAME DEVELOPMENT
             <br />
@@ -109,12 +109,19 @@ function GameServices() {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative group rounded-lg overflow-hidden opacity-0 cursor-pointer"
-              onClick={() => navigate(service.path)}
+              className="relative group rounded-lg overflow-hidden opacity-0 cursor-pointer touch-manipulation min-h-[200px] md:min-h-[250px]"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigate(service.path);
+              }}
+              onTouchStart={(e) => {
+                e.stopPropagation();
+              }}
               style={{
                 animation: 'fadeIn 0.5s forwards',
                 transform: `translate(${Math.floor(Math.random() * 600 - 300)}px, ${Math.floor(Math.random() * 400 - 200)}px) rotate(${Math.floor(Math.random() * 90 - 45)}deg) scale(0.2)`,
@@ -129,10 +136,10 @@ function GameServices() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-pink-500 to-purple-600 rounded-lg"></div>
               
               {/* Inner content container with thicker border - larger box */}
-              <div className="relative m-[5px] bg-[#1E0A3C] rounded-lg p-6 hover:bg-[#2A1052] transition-colors duration-300">
-                <div className="flex flex-col items-center justify-center h-full py-10">
+              <div className="relative m-[5px] bg-[#1E0A3C] rounded-lg p-4 md:p-6 hover:bg-[#2A1052] active:bg-[#2A1052] transition-colors duration-300">
+                <div className="flex flex-col items-center justify-center h-full py-6 md:py-10">
                   <div 
-                    className="text-white mb-6 flex justify-center opacity-0"
+                    className="text-white mb-4 md:mb-6 flex justify-center opacity-0"
                     style={{
                       animation: 'fadeIn 0.5s forwards',
                       transform: `translate(${Math.floor(Math.random() * 300 - 150)}px, ${Math.floor(Math.random() * 300 - 150)}px) rotate(${Math.floor(Math.random() * 180 - 90)}deg)`,
@@ -145,7 +152,7 @@ function GameServices() {
                   >
                     {service.icon}
                   </div>
-                  <h3 className="text-white text-xl font-medium text-center">
+                  <h3 className="text-white text-base md:text-lg lg:text-xl font-medium text-center">
                     {service.title.split('').map((letter, i) => (
                       <span 
                         key={i} 

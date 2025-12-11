@@ -76,28 +76,40 @@ function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[73px] bg-[#130026] z-40 overflow-y-auto">
-          <div className="flex flex-col py-4 px-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleLinkClick(link)}
-                className="text-left text-base font-medium tracking-wide text-white hover:text-purple-400 transition-colors font-rajdhani py-4 px-4 border-b border-white/10 active:bg-purple-500/10 min-h-[48px]"
+        <>
+          {/* Backdrop */}
+          <div 
+            className="md:hidden fixed inset-0 bg-black/50 z-30"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          {/* Menu */}
+          <div className="md:hidden fixed inset-0 top-[73px] bg-[#130026] z-40 overflow-y-auto">
+            <div className="flex flex-col py-4 px-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleLinkClick(link);
+                  }}
+                  className="text-left text-base font-medium tracking-wide text-white hover:text-purple-400 transition-colors font-rajdhani py-4 px-4 border-b border-white/10 active:bg-purple-500/10 min-h-[48px] touch-manipulation"
+                >
+                  {link.name}
+                </button>
+              ))}
+              <button 
+                className="mt-4 px-8 py-4 text-base rounded border-2 border-purple-500 text-white font-orbitron glow-button hover:bg-purple-500/10 transition-colors w-full touch-manipulation"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMenuOpen(false);
+                  window.location.href = '/contactus';
+                }}
               >
-                {link.name}
+                JOIN US
               </button>
-            ))}
-            <button 
-              className="mt-4 px-8 py-4 text-base rounded border-2 border-purple-500 text-white font-orbitron glow-button hover:bg-purple-500/10 transition-colors w-full"
-              onClick={() => {
-                setIsMenuOpen(false);
-                window.location.href = '/contactus';
-              }}
-            >
-              JOIN US
-            </button>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );

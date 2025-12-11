@@ -930,6 +930,19 @@ body {
   * {
     -webkit-overflow-scrolling: touch;
   }
+  
+  /* Ensure clickable elements are above overlays */
+  button, a, [onClick] {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+  }
+  
+  /* Fix for service cards */
+  .cursor-pointer {
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: rgba(168, 85, 247, 0.3);
+  }
 }
 
 /* Touch manipulation for better mobile performance */
