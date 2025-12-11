@@ -17,7 +17,7 @@ import lo4 from './assest/lo4.png';
 import Game from './assest/unity.jpg'
 
 
-import { Target, Users, BarChart3, Flag, Gamepad2, Rocket } from 'lucide-react'
+import { Target, Users, BarChart3, Flag, Gamepad2, Rocket, Info, X, ExternalLink } from 'lucide-react'
 
 function App() {
   // Text layout matches the image with split lines
@@ -33,6 +33,7 @@ const [formData, setFormData] = useState({
   budget: '',     
   message: ''   
 });    
+const [showAlert, setShowAlert] = useState(true);
 
 const handleInputChange = (e) => {     
   setFormData({       
@@ -54,6 +55,30 @@ const handleInputChange = (e) => {
 
   return (
     <div className="min-h-screen bg-[#130026] text-white">
+      
+      {/* Important Alert Banner for Internships */}
+      {showAlert && (
+        <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-pulse border-b-2 border-purple-400 shadow-lg">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 flex-1">
+                <Info className="w-6 h-6 text-white animate-bounce flex-shrink-0" />
+                <p className="text-white font-semibold text-sm md:text-base font-rajdhani flex-1">
+                  <span className="font-bold text-yellow-300">🎓 IMPORTANT:</span> For <span className="font-bold text-yellow-300">Internship Opportunities</span>, click on <span className="font-bold underline cursor-pointer hover:text-yellow-300 transition-colors" onClick={() => window.open('https://bes-kappa.vercel.app/', '_blank')}>CAREERS</span> in the navigation menu above!
+                </p>
+              </div>
+              <button
+                onClick={() => setShowAlert(false)}
+                className="text-white hover:text-yellow-300 transition-colors p-1 rounded-full hover:bg-white/20 flex-shrink-0"
+                aria-label="Close alert"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent animate-shimmer"></div>
+        </div>
+      )}
       
       {/* Hero Section */}
       

@@ -1005,5 +1005,19 @@ body {
     #8b5cf6  /* violet */
   );
   background-size: 300% 300%;
-  animation: gradient-animation 4s ease infinite;
+  animation: gradient-animation 4s ease infinite;
+}
+
+/* Shimmer animation for alert banner */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
 }
