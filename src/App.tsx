@@ -61,6 +61,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careeres />} />
+          <Route path="/Careers" element={<Careeres />} />
+          <Route path="/CAREERS" element={<Careeres />} />
           <Route path="/blog" element={<Blog />} />
           
           {/* Game Services main page */}
