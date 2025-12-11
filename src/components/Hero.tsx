@@ -59,17 +59,17 @@ const handleInputChange = (e) => {
       {/* Important Alert Banner for Internships */}
       {showAlert && (
         <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-pulse border-b-2 border-purple-400 shadow-lg">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3 flex-1">
-                <Info className="w-6 h-6 text-white animate-bounce flex-shrink-0" />
-                <p className="text-white font-semibold text-sm md:text-base font-rajdhani flex-1">
-                  <span className="font-bold text-yellow-300">🎓 IMPORTANT:</span> For <span className="font-bold text-yellow-300">Internship Opportunities</span>, click on <span className="font-bold underline cursor-pointer hover:text-yellow-300 transition-colors" onClick={() => window.open('https://bes-kappa.vercel.app/', '_blank')}>CAREERS</span> in the navigation menu above!
+          <div className="container mx-auto px-3 md:px-4 py-3 md:py-4">
+            <div className="flex items-start md:items-center justify-between gap-2 md:gap-4">
+              <div className="flex items-start gap-2 md:gap-3 flex-1 min-w-0">
+                <Info className="w-5 h-5 md:w-6 md:h-6 text-white animate-bounce flex-shrink-0 mt-0.5 md:mt-0" />
+                <p className="text-white font-semibold text-xs md:text-sm lg:text-base font-rajdhani flex-1 leading-tight md:leading-normal">
+                  <span className="font-bold text-yellow-300">🎓 IMPORTANT:</span> For <span className="font-bold text-yellow-300">Internship Opportunities</span>, click on <span className="font-bold underline cursor-pointer hover:text-yellow-300 transition-colors" onClick={() => window.open('https://bes-kappa.vercel.app/', '_blank')}>CAREERS</span> in the menu!
                 </p>
               </div>
               <button
                 onClick={() => setShowAlert(false)}
-                className="text-white hover:text-yellow-300 transition-colors p-1 rounded-full hover:bg-white/20 flex-shrink-0"
+                className="text-white hover:text-yellow-300 transition-colors p-2 md:p-1 rounded-full hover:bg-white/20 flex-shrink-0 min-w-[32px] min-h-[32px] flex items-center justify-center"
                 aria-label="Close alert"
               >
                 <X className="w-5 h-5" />
@@ -83,10 +83,10 @@ const handleInputChange = (e) => {
       {/* Hero Section */}
       
 
-  <div className="flex flex-col md:flex-row justify-between items-start py-16 px-8 min-h-[80vh] bg-[#130026z]">         
-  <div className="max-w-full md:max-w-4xl">           
-    <h1 className="text-4xl md:text-6xl font-extrabold mb-8 text-white font-orbitron leading-tight word-spacing">             
-      <div className="mt-2">
+  <div className="flex flex-col md:flex-row justify-between items-start py-8 md:py-16 px-4 md:px-8 min-h-[60vh] md:min-h-[80vh] bg-[#130026]">         
+  <div className="max-w-full md:max-w-4xl w-full md:w-auto">           
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-8 text-white font-orbitron leading-tight word-spacing">             
+      <div className="mt-1 md:mt-2">
         {titleLine1.split('').map((letter, index) => (
           <span 
             key={`title1-${index}`} 
@@ -96,7 +96,7 @@ const handleInputChange = (e) => {
           </span>
         ))}
       </div>                          
-      <div className="mt-2">
+      <div className="mt-1 md:mt-2">
         {titleLine3.split('').map((letter, index) => (
           <span 
             key={`title3-${index}`} 
@@ -106,7 +106,7 @@ const handleInputChange = (e) => {
           </span>
         ))}
       </div>             
-      <div className="mt-2">
+      <div className="mt-1 md:mt-2">
         {titleLine4.split('').map((letter, index) => (
           <span 
             key={`title4-${index}`} 
@@ -117,17 +117,17 @@ const handleInputChange = (e) => {
         ))}
       </div>           
     </h1>           
-    <p className="text-lg leading-relaxed mb-16 text-white/70 font-rajdhani max-w-xl">             
+    <p className="text-base md:text-lg leading-relaxed mb-8 md:mb-16 text-white/70 font-rajdhani max-w-xl">             
       At Synnoviq Technologies, we offer a comprehensive suite of services designed to meet the              
       evolving needs of businesses and entertainment industries.           
     </p>           
-    <button className="px-10 py-4 text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button" 
+    <button className="px-6 md:px-10 py-3 md:py-4 text-base md:text-xl rounded border-2 border-purple-500 text-white font-orbitron glow-button active:scale-95 transition-transform min-h-[48px] touch-manipulation" 
       onClick={() => window.location.href = '/contactus'} >   
       Connect 
     </button>         
   </div>                    
-  <div className="mt-10 md:mt-0 w-full md:w-auto flex justify-end self-start pt-0 md:pt-10">           
-    <div className="w-64 h-64 md:w-80 md:h-80 relative">             
+  <div className="mt-6 md:mt-0 w-full md:w-auto flex justify-center md:justify-end self-start pt-0 md:pt-10">           
+    <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 relative">             
       <img src={photo1} alt="Game Controller" className="photo1" />           
     </div>         
   </div>       

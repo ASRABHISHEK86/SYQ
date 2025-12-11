@@ -655,7 +655,13 @@ body {
   width: 100%;  
   max-width: 320px;
   object-fit: contain;
-  margin-left: -30px;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .photo1 {
+    margin-left: -30px;
+  }
 }
 
 .word-spacing {
@@ -898,6 +904,37 @@ body {
 .submit-button:hover {
   background: rgba(244, 114, 182, 0.1);
   transform: translateY(-2px);
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  /* Ensure minimum touch target size (48x48px) */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Prevent text selection on buttons for better UX */
+  button {
+    -webkit-tap-highlight-color: rgba(168, 85, 247, 0.3);
+    user-select: none;
+  }
+  
+  /* Improve touch scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Touch manipulation for better mobile performance */
+.touch-manipulation {
+  touch-action: manipulation;
 }
 
 @keyframes glowingBorder {
